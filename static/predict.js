@@ -1,9 +1,9 @@
 // Loading Pretrained Model in JSON
 let model;
 (async function () {
-    model = await tf.loadLayersModel('http://127.0.0.1:3000/json_model/model.json');
+    // model = await tf.loadLayersModel('http://127.0.0.1:3000/json_model/model.json');
     // model = await tf.loadLayersModel('localstorage://HDR_model_1.keras');
-    // model = await tf.loadLayersModel('file:///Users/LEGION/Documents/C.O.D.E/Buildathon-Teams-Work/Handwritten-Digit-Recognition/HDR-canvas-nodejs/static/json_model/model.json');
+    model = await tf.loadLayersModel('file:///static/json_model/model.json');
     console.log('Model Loaded');
 })();
 
