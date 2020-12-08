@@ -8,12 +8,10 @@ let model;
 })();
 
 
-var prediction = document.getElementById('prediction');
-
 var tf_img, resized_img, normalized_img, final_img, output, label;
 
 // Starting Prediction Procedure
-prediction.addEventListener('click', function () {
+document.getElementById('predict').addEventListener('click', function () {
     console.log('Predict Click Detected');
 
     if (typeof imgData === 'undefined') {
@@ -45,7 +43,7 @@ prediction.addEventListener('click', function () {
         label = output.argMax(0);
         label.print();
 
-        prediction.innerHTML = 'Prediction: ' + label.dataSync();
+        document.getElementById('prediction').innerHTML = 'Prediction: ' + label.dataSync();
     }
 });
 

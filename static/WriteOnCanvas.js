@@ -21,13 +21,13 @@ ctx.stroke();
 let painting = false;
 
 function startPosition(e) {
-    console.log('Mouse is Down: startPosition');
+    // console.log('Mouse is Down: startPosition');
     painting = true;
     draw(e);
 }
 
 function finishPosition() {
-    console.log('Mouse is Up: finishPosition');
+    // console.log('Mouse is Up: finishPosition');
     painting = false;
     ctx.beginPath();
 
@@ -37,18 +37,10 @@ function finishPosition() {
 
 function draw(e) {
     if (!painting) return;
-    console.log('Mouse is Moving: draw');
+    // console.log('Mouse is Moving: draw');
 
     var currX = e.clientX - canvas.offsetParent.offsetLeft - canvas.offsetLeft;
     var currY = e.clientY - canvas.offsetParent.offsetTop - canvas.offsetTop;
-
-    console.log('currX:', currX);
-    console.log('currY:', currY);
-    console.log('e.clientX', e.clientX);
-    console.log('e.clientY', e.clientY);
-    console.log('canvas.offsetLeft:', canvas.offsetLeft);
-    console.log('canvas.offsetTop:', canvas.offsetTop);
-    console.log('canvas.offsetParent.offsetLeft', canvas.offsetParent.offsetLeft);
 
     ctx.lineTo(currX, currY);
     ctx.stroke();
