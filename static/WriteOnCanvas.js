@@ -32,8 +32,8 @@ function finishPosition() {
 function draw(e) {
     if (!painting) return;
 
-    var currX = e.clientX - canvas.offsetParent.offsetLeft - canvas.offsetLeft;
-    var currY = e.clientY - canvas.offsetParent.offsetTop - canvas.offsetTop;
+    var currX = e.clientX - canvas.offsetParent.offsetLeft - canvas.offsetLeft + window.pageXOffset;
+    var currY = e.clientY - canvas.offsetParent.offsetTop - canvas.offsetTop + window.pageYOffset;
 
     ctx.lineTo(currX, currY);
     ctx.stroke();

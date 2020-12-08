@@ -47,9 +47,9 @@ document.getElementById('predict').addEventListener('click', function () {
 
 
         prediction_text.innerHTML = 'Prediction: ' + label.dataSync();
-        prediction_text.style.color = '#184d47';
+        prediction_text.style.color = '#ffffff';
         prediction_text.style.fontWeight = 'normal';
-        document.getElementsByClassName('card-header')[0].style.backgroundColor = '#ffd571';
+        document.getElementsByClassName('card-header')[0].style.backgroundColor = '#184d47';
     }
 });
 
@@ -66,6 +66,6 @@ document.getElementById('clear').addEventListener('click', function () {
     prediction_text.innerHTML = 'Prediction Box';
     prediction_text.style.color = '#ffffff';
     prediction_text.style.fontWeight = '';
-    document.getElementsByClassName('card-header')[0].style.backgroundColor = '#184d47';
+    document.getElementsByClassName('card-header')[0].style.backgroundColor = '#411f1f';
     // location.reload();
 });
