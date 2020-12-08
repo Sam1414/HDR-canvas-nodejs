@@ -5,7 +5,7 @@ let model;
     // model = await tf.loadLayersModel('localstorage://HDR_model_1.keras');
     // model = await tf.loadLayersModel('file:///app/static/json_model/model.json');
     console.log(String(window.location.href));
-    model = await tf.loadLayersModel(String(window.location.href) + 'static/json_model/model.json')
+    model = await tf.loadLayersModel(String(window.location.href) + '/json_model/model.json')
     console.log('Model Loaded');
 })();
 
@@ -14,7 +14,6 @@ var tf_img, resized_img, normalized_img, final_img, output, label;
 
 // Starting Prediction Procedure
 document.getElementById('predict').addEventListener('click', function () {
-    console.log('Predict Click Detected');
 
     if (typeof imgData === 'undefined') {
         console.log('Empty Canvas Image');
