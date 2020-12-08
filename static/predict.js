@@ -4,7 +4,6 @@ let model;
     // model = await tf.loadLayersModel('http://127.0.0.1:3000/json_model/model.json');
     // model = await tf.loadLayersModel('localstorage://HDR_model_1.keras');
     // model = await tf.loadLayersModel('file:///app/static/json_model/model.json');
-    console.log(String(window.location.href));
     model = await tf.loadLayersModel(String(window.location.href) + '/json_model/model.json')
     console.log('Model Loaded');
 })();
