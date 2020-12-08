@@ -3,9 +3,9 @@ var image, imgData;
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-const LINE_WIDTH = 25;
-const LINE_COLOR = '#000000';
-const FILL_COLOR = '#ffffff';
+const LINE_WIDTH = 15;
+const LINE_COLOR = '#ffffff';
+const FILL_COLOR = '#000000';
 
 ctx.lineWidth = LINE_WIDTH;
 ctx.lineCap = 'round';

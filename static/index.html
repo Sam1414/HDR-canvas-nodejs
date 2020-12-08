@@ -21,17 +21,16 @@
     }
 
     .container-fluid {
-      /* background-color: #00587a; */
-      /* background-image: url('trees-dark-1.png'); */
-      background-image: url('assets/colorful-smoke-dark.jpg');
-      /* Full height */
-      height: 100%;
+      background-image: url('assets/trees-dark-1.png');
+      /* background-image: url('assets/colorful-smoke-dark.jpg'); */
 
       /* Center and scale the image nicely */
-      background-position: center;
+      background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100%;
+      min-height: 100%;
+      /* height: 100%; */
+      background-color: #00587a;
     }
 
     .flex-container {
@@ -41,7 +40,7 @@
     }
 
     .card-header {
-      background-color: #07689f;
+      background-color: #184d47;
     }
 
     .prediction-div {
@@ -50,6 +49,7 @@
 
     .canvas {
       border: 1px solid;
+      touch-action: none;
     }
 
     .btn-row {
@@ -84,9 +84,9 @@
     <div class="flex-container">
       <div class="card text-center">
         <div class="card-header">
-          <div id="prediction" class="display-6 text-white">Prediction Box</div>
+          <div id="prediction" class="display-6 font-weight-bold">Prediction Box</div>
         </div>
-        <div class="card-body">
+        <div class="card-body bg-dark">
           <canvas id="canvas" class="canvas" width="300" height="300"></canvas>
         </div>
       </div>
@@ -107,6 +107,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
   <!-- Draw on Canvas Code -->
   <script src="WriteOnCanvas.js"></script>
+  <!-- Draw on Mobile Canvas Code -->
+  <script src="draw-mobile.js"></script>
   <!-- Predict -->
   <script src="predict.js"></script>
 </body>

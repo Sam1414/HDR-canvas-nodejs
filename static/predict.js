@@ -9,6 +9,8 @@ let model;
 })();
 
 
+var prediction_text = document.getElementById('prediction');
+prediction_text.style.color = '#ffffff'
 var tf_img, resized_img, normalized_img, final_img, output, label;
 
 // Starting Prediction Procedure
@@ -26,7 +28,7 @@ document.getElementById('predict').addEventListener('click', function () {
         // Reversing Pixel Values
         // In Model Black - 255, White - 0
         // In canvas Black - 0, White - 255
-        resized_img = tf.abs(resized_img.sub(tf.scalar(255)));
+        // resized_img = tf.abs(resized_img.sub(tf.scalar(255)));
 
         // Normalizing Data
         normalized_img = resized_img.div(tf.scalar(255));
@@ -43,11 +45,27 @@ document.getElementById('predict').addEventListener('click', function () {
         label = output.argMax(0);
         label.print();
 
-        document.getElementById('prediction').innerHTML = 'Prediction: ' + label.dataSync();
+
+        prediction_text.innerHTML = 'Prediction: ' + label.dataSync();
+        prediction_text.style.color = '#184d47';
+        prediction_text.style.fontWeight = 'normal';
+        document.getElementsByClassName('card-header')[0].style.backgroundColor = '#ffd571';
     }
 });
 
-// Clearing Canvas By Reloading Page
+// Clearing Changes
 document.getElementById('clear').addEventListener('click', function () {
-    location.reload();
+    // clearing image data
+    imgData = undefined;
+
+    // clearing canvas
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.stroke();
+
+    // reverting changes
+    prediction_text.innerHTML = 'Prediction Box';
+    prediction_text.style.color = '#ffffff';
+    prediction_text.style.fontWeight = '';
+    document.getElementsByClassName('card-header')[0].style.backgroundColor = '#184d47';
+    // location.reload();
 });
