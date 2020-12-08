@@ -1,0 +1,25 @@
+{
+  "name": "hdr-canvas-nodejs",
+  "version": "1.0.0",
+  "description": "Handwritten Digit Recognition. Pretrained Model  made through keras using python is used. HTML canvas is used to get user digit and then pretrained model is used to classify the digit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "Handwritten",
+    "Digit",
+    "Recognition",
+    "Digit",
+    "Recognition"
+  ],
+  "author": "Sam1414",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+}
